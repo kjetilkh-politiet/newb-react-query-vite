@@ -12,6 +12,7 @@
     "migrate": "drizzle-kit migrate"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
     "drizzle-orm": "^0.33.0",
     "mysql2": "^3.11.3",
     "react": "^18.3.1",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@tanstack/eslint-plugin-query": "^5.57.2",
     "@types/node": "^22.7.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
