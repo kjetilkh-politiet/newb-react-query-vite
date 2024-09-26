@@ -8,7 +8,7 @@ export default function Users() {
 
   return (
     <section>
-      <table>
+      <table className="data-table">
         <thead>
           <tr>
             <td>ID</td>

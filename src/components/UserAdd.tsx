@@ -17,6 +17,7 @@ export default function UserAdd() {
         queryClient.invalidateQueries({ queryKey: ["user"] });
 
         // set user feedback
+        setErrorMessage(data.message);
         setSuccessMessage(data.message);
 
         // reset form
@@ -24,6 +25,7 @@ export default function UserAdd() {
         setLastName("");
         setEmail("");
       } else if (data.status === "error") {
+        setSuccessMessage("");
         setErrorMessage(data.message);
       }
     },
