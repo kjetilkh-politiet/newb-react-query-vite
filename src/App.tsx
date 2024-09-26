@@ -8,6 +8,7 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <h1>TanStack/React Query | React | Vite</h1>
       <Users />
     </QueryClientProvider>
   );
