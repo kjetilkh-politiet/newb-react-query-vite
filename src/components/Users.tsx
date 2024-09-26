@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getUsers } from "../user";
+import UserDelete from "./UserDelete";
 
 export default function Users() {
   // Queries
@@ -14,16 +15,20 @@ export default function Users() {
             <td>Fornavn</td>
             <td>Etternavn</td>
             <td>E-post</td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
           {query.data?.map((user) => {
             return (
-              <tr>
+              <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.firstName}</td>
                 <td>{user.lastName}</td>
                 <td>{user.email}</td>
+                <td>
+                  <UserDelete userId={user.id} />
+                </td>
               </tr>
             );
           })}
