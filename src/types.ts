@@ -7,10 +7,9 @@ export interface User {
 
 export type UserCreate = Omit<User, "id">;
 
-export type UserCreateResult =
+export type ActionResult =
   | {
       status: "success";
-      user: User;
       message: string;
     }
   | {

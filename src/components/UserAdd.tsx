@@ -12,33 +12,19 @@ export default function UserAdd() {
         email,
       });
     },
-    onSuccess: (data) => {
-      if (data.status === "success") {
-        queryClient.invalidateQueries({ queryKey: ["user"] });
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["user"] });
 
-        // set user feedback
-        setErrorMessage(data.message);
-        setSuccessMessage(data.message);
-
-        // reset form
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-      } else if (data.status === "error") {
-        setSuccessMessage("");
-        setErrorMessage(data.message);
-      }
-    },
-    onError: (error) => {
-      setErrorMessage(error.message);
+      // reset form
+      setFirstName("");
+      setLastName("");
+      setEmail("");
     },
   });
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -93,8 +79,12 @@ export default function UserAdd() {
         >
           Legg til bruker
         </button>
-        {successMessage && <p className="text-green-300">{successMessage}</p>}
-        {errorMessage && <p className="text-red-300">{errorMessage}</p>}
+        {mutation.isSuccess && (
+          <p className="text-green-300">{mutation.data.message}</p>
+        )}
+        {mutation.isError && (
+          <p className="text-red-300">{mutation.error.message}</p>
+        )}
       </section>
     </form>
   );

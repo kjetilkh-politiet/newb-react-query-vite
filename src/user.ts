@@ -1,4 +1,4 @@
-import { User, UserCreate, UserCreateResult } from "./types";
+import { User, UserCreate, ActionResult } from "./types";
 
 export async function getUsers() {
   const res = await fetch("http://localhost:3001/api/user");
@@ -9,7 +9,9 @@ export async function deleteUser(userId: number) {
   const res = await fetch(`http://localhost:3001/api/user/${userId}/delete`, {
     method: "DELETE",
   });
-  return res.json() as Promise<boolean>;
+  const data = (await res.json()) as ActionResult;
+  if (res.status >= 400) throw Error(data.message);
+  return data;
 }
 
 export async function addUser(user: UserCreate) {
@@ -20,5 +22,7 @@ export async function addUser(user: UserCreate) {
       "Content-Type": "application/json",
     },
   });
-  return res.json() as Promise<UserCreateResult>;
+  const data = (await res.json()) as ActionResult;
+  if (res.status >= 400) throw Error(data.message);
+  return data;
 }
