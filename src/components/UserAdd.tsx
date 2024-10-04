@@ -1,7 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { FormEvent, useState } from "react";
-import { addUser } from "../lib/user";
-import { queryClient } from "../lib/react-query";
+import { addUser } from "../utils/user";
+import { queryClient } from "../utils/react-query";
+import { CacheTags } from "../utils/cache";
 
 export default function UserAdd() {
 	const mutation = useMutation({
@@ -13,7 +14,7 @@ export default function UserAdd() {
 			});
 		},
 		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["user"] });
+			queryClient.invalidateQueries({ queryKey: [CacheTags.users] });
 
 			// reset form
 			setFirstName("");

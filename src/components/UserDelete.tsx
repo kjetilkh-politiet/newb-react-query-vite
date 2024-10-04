@@ -1,8 +1,9 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { deleteUser } from "../lib/user";
-import { queryClient } from "../lib/react-query";
+import { deleteUser } from "../utils/user";
+import { queryClient } from "../utils/react-query";
+import { CacheTags } from "../utils/cache";
 
 export default function UserDelete({ userId }: { userId: number }) {
 	const mutation = useMutation({
@@ -10,7 +11,7 @@ export default function UserDelete({ userId }: { userId: number }) {
 			return deleteUser(userId);
 		},
 		onSuccess: () => {
-			queryClient.invalidateQueries({ queryKey: ["user"] });
+			queryClient.invalidateQueries({ queryKey: [CacheTags.users] });
 		},
 	});
 
