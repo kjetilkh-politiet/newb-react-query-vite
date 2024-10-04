@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getUsers } from "../user";
+import { getUsers } from "../lib/user";
 import UserDelete from "./UserDelete";
 
 export default function Users() {

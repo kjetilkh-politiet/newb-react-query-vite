@@ -1,7 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { FormEvent, useState } from "react";
-import { addUser } from "../user";
-import { queryClient } from "../react-query";
+import { addUser } from "../lib/user";
+import { queryClient } from "../lib/react-query";
 
 export default function UserAdd() {
   const mutation = useMutation({

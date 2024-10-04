@@ -1,6 +1,6 @@
 import "./App.css";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./react-query";
+import { queryClient } from "./lib/react-query";
 import Page from "./page";
 
 function App() {

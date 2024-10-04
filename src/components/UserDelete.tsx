@@ -1,8 +1,8 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { deleteUser } from "../user";
-import { queryClient } from "../react-query";
+import { deleteUser } from "../lib/user";
+import { queryClient } from "../lib/react-query";
 
 export default function UserDelete({ userId }: { userId: number }) {
   const mutation = useMutation({
