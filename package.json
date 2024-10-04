@@ -1,40 +1,43 @@
 {
-  "name": "newb-vite-react-query",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "generate": "drizzle-kit generate",
-    "migrate": "drizzle-kit migrate"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^5.56.2",
-    "drizzle-orm": "^0.33.0",
-    "mysql2": "^3.11.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.9.0",
-    "@tanstack/eslint-plugin-query": "^5.57.2",
-    "@types/node": "^22.7.0",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "autoprefixer": "^10.4.20",
-    "drizzle-kit": "^0.24.2",
-    "eslint": "^9.9.0",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.9",
-    "globals": "^15.9.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
-  }
+	"name": "newb-vite-react-query",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"lint": "eslint .",
+		"preview": "vite preview",
+		"generate": "drizzle-kit generate",
+		"migrate": "drizzle-kit migrate",
+		"format": "npx prettier --write .",
+		"format:check": "npx prettier --check ."
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.56.2",
+		"drizzle-orm": "^0.33.0",
+		"mysql2": "^3.11.3",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.9.0",
+		"@tanstack/eslint-plugin-query": "^5.57.2",
+		"@types/node": "^22.7.0",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"autoprefixer": "^10.4.20",
+		"drizzle-kit": "^0.24.2",
+		"eslint": "^9.9.0",
+		"eslint-plugin-react-hooks": "^5.1.0-rc.0",
+		"eslint-plugin-react-refresh": "^0.4.9",
+		"globals": "^15.9.0",
+		"postcss": "^8.4.47",
+		"prettier": "^3.3.3",
+		"tailwindcss": "^3.4.13",
+		"typescript": "^5.5.3",
+		"typescript-eslint": "^8.0.1",
+		"vite": "^5.4.1"
+	}
 }
