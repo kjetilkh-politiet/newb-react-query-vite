@@ -5,6 +5,10 @@ import { queryClient } from "../utils/react-query";
 import { CacheTags } from "../utils/cache";
 
 export default function UserAdd() {
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+
 	const mutation = useMutation({
 		mutationFn: () => {
 			return addUser({
@@ -22,10 +26,6 @@ export default function UserAdd() {
 			setEmail("");
 		},
 	});
-
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [email, setEmail] = useState("");
 
 	const onSubmit = (event: FormEvent) => {
 		event.preventDefault();
