@@ -7,9 +7,7 @@ function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<main className="max-w-[650px] m-auto py-24">
-				<h1 className="text-4xl mb-6">
-					TanStack/React Query | React | Vite
-				</h1>
+				<h1 className="text-4xl mb-6">React Query | React | Vite</h1>
 				<Page />
 			</main>
 		</QueryClientProvider>
