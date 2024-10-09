@@ -1,5 +1,3 @@
-"use client";
-
 import { useMutation } from "@tanstack/react-query";
 import { deleteUser } from "../utils/user";
 import { queryClient } from "../utils/react-query";
