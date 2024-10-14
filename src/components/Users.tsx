@@ -4,7 +4,6 @@ import UserDelete from "./UserDelete";
 import { CacheTags } from "../utils/cache";
 
 export default function Users() {
-	// Queries
 	const query = useQuery({ queryKey: [CacheTags.users], queryFn: getUsers });
 
 	return (
